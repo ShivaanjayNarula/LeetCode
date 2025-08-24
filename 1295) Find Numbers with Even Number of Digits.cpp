@@ -1,32 +1,16 @@
 class Solution {
 public:
     int findNumbers(vector<int>& nums) {
-        ios::sync_with_stdio(0);
-        cin.tie(0);
-        cout.tie(0);
         int n = nums.size();
         int ans = 0;
-        for(auto i : nums)
+        for(int i = 0; i < n; i++)
         {
-            if(check(i))
+            string s = to_string(nums[i]);
+            if(s.size() % 2 == 0)
             {
                 ans++;
             }
         }
         return ans;
-    }
-    bool check(int n)
-    {
-        int check = 0;
-        while(n)
-        {
-            n /= 10;
-            check++;
-        }
-        if(check % 2 == 0)
-        {
-            return true;
-        }
-        return false;
     }
 };
